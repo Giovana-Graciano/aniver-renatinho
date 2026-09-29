@@ -1,0 +1,192 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>★ SECRET FRIEND AREA ★</title><link rel="stylesheet" href="style.css?v=8">
+<style>
+.factory-v10{display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,44%);gap:14px;align-items:start}
+.v10-panel{background:linear-gradient(145deg,#f9fff5,#c6d7c7);border:6px ridge #fff;box-shadow:7px 7px #111;padding:12px}
+.v10-panel h3{margin:0 0 8px;color:#0d3c22;text-shadow:2px 2px #fff;font-size:15px}
+.v10-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.v10-field{margin:8px 0}.v10-field label{display:block;font-size:9px;font-weight:bold;margin-bottom:4px}
+.v10-field input,.v10-field select,.v10-field textarea{width:100%;box-sizing:border-box;border:4px inset #fff;background:#fff;padding:7px;font-family:inherit}
+.v10-themes{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.v10-theme{border:4px outset #fff;padding:7px;background:#eee;cursor:pointer;font-size:9px;font-weight:bold;min-height:48px}
+.v10-theme.active{border:4px inset #fff;outline:3px solid #111}
+.v10-emojis{display:flex;flex-wrap:wrap;gap:5px}.v10-emoji{font-size:22px;border:3px outset #fff;background:#fff;cursor:pointer;padding:3px}
+.v10-preview-wrap{position:sticky;top:10px}
+.v10-preview{min-height:520px;position:relative;overflow:hidden;border:8px ridge #fff;box-shadow:8px 8px #111;padding:20px;background:linear-gradient(135deg,#0d6b3b,#ef3340,#fff)}
+.v10-preview .scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.06) 0 2px,transparent 2px 5px);pointer-events:none}
+.v10-card{position:relative;z-index:2;min-height:460px;border:8px ridge #fff;box-shadow:0 0 0 4px #111,10px 10px #111;background:rgba(255,255,255,.9);padding:18px;text-align:center;overflow:hidden}
+.v10-card h2{font-size:28px;margin:8px 0;color:#102c1b;text-shadow:3px 3px #fff}.v10-card p{font-size:13px;line-height:1.5;color:#111}
+.v10-hero{font-size:70px;animation:v10dance .65s infinite alternate;filter:drop-shadow(4px 4px #111);display:inline-block}
+.v10-float{position:absolute;animation:v10float 2.3s ease-in-out infinite}.v10-f1{left:8%;top:12%}.v10-f2{right:8%;top:22%;animation-delay:.5s}.v10-f3{left:12%;bottom:16%;animation-delay:1s}.v10-f4{right:12%;bottom:10%;animation-delay:1.5s}
+.v10-gif{max-width:150px;max-height:120px;border:4px ridge #fff;box-shadow:4px 4px #111;margin:8px auto}
+.v10-status{font-size:9px;background:#111;color:#8dffb4;padding:7px;margin-top:8px;min-height:14px}
+@keyframes v10dance{to{transform:translateY(-8px) rotate(4deg) scale(1.05)}}@keyframes v10float{50%{transform:translateY(-14px) rotate(8deg)}}
+@media(max-width:900px){.factory-v10{grid-template-columns:1fr}.v10-preview-wrap{position:relative}.v10-row{grid-template-columns:1fr}}
+</style>
+<style>body > .factory:not(#factoryV10), body > section.card-factory-old{display:none!important}</style></head><body>
+<main class="intro-screen"><div class="intro-window" style="min-height:auto"><div class="window-title"><span>★ FRIEND_AREA.EXE</span><span>PRIVATE</span></div><div class="intro-content" style="justify-content:flex-start">
+<div class="tiny blink">!!! CLASSIFIED !!!</div><h1 style="font-size:32px">CARD FACTORY<span style="font-size:24px">CREATE YOUR RENATINHO MEMORY</span></h1>
+<form id="gate" class="win-box" style="padding:18px;width:min(480px,100%);color:#111"><label style="display:block;font-weight:bold;font-size:10px">ACCESS CODE<input id="code" style="display:block;width:100%;padding:12px;margin:8px 0" autocomplete="off"></label><button class="start-button" style="font-size:10px;width:100%;margin:8px 0">ENTER SECRET AREA</button><div id="error" style="color:#a00;font-weight:bold;font-size:9px"></div></form>
+<form id="factory" class="win-box hidden" style="padding:18px;width:min(900px,100%);color:#111;text-align:left">
+<div class="box-head">CREATE YOUR CARD</div><div style="padding:12px;display:grid;gap:10px">
+<label>SEU NOME<input id="name" required style="display:block;width:100%;padding:9px"></label>
+<label>TÍTULO<input id="title" placeholder="Ex.: LEVEL UP!" style="display:block;width:100%;padding:9px"></label>
+<label>MENSAGEM<textarea id="message" rows="7" required style="display:block;width:100%;padding:9px"></textarea></label>
+<label>ÍCONE / EMOJI<input id="icon" value="✨" style="display:block;width:100%;padding:9px"></label>
+<label>ANIMAÇÃO<select id="anim" style="display:block;width:100%;padding:9px"><option value="stadium">⚽ STADIUM</option><option value="dino">🦖 DINOSAUR</option><option value="pirate">☠️ PIRATE</option><option value="music">♫ MUSIC</option><option value="books">📖 BOOK</option><option value="secret">★ SECRET</option></select></label>
+<label>MÚSICA<select id="musicType" style="display:block;width:100%;padding:9px"><option value="none">SEM MÚSICA</option><option value="youtube">YOUTUBE</option><option value="spotify">SPOTIFY</option><option value="file">ARQUIVO DE ÁUDIO</option></select></label>
+<input id="musicUrl" placeholder="Cole o link do YouTube/Spotify" style="display:block;width:100%;padding:9px">
+<input id="musicFile" type="file" accept="audio/*" style="display:block;width:100%;padding:9px">
+<label>FOTO<input id="photo" type="file" accept="image/*" style="display:block;width:100%;padding:9px"></label>
+<button type="button" id="preview" class="start-button" style="font-size:10px">TESTAR VISUAL</button>
+<button type="submit" class="start-button" style="font-size:10px">💾 EXPORTAR MEU CARTÃO</button>
+<div id="status" style="font-size:9px"></div><p style="font-size:8px;margin-top:8px">Você envia apenas o arquivo .json para a pessoa responsável pelo site. Seu cartão só aparece depois de ser revisado e publicado.</p>
+</div></form>
+</div></div></main>
+<script>
+const G="RENATINHO2000";let photoData="",audioData="";
+const $=s=>document.querySelector(s);
+$("#gate").onsubmit=e=>{e.preventDefault();if($("#code").value.trim().toUpperCase()===G){$("#gate").classList.add("hidden");$("#factory").classList.remove("hidden")}else $("#error").textContent="ACCESS DENIED"};
+$("#photo").onchange=()=>{const f=$("#photo").files[0];if(!f)return;const r=new FileReader();r.onload=()=>photoData=r.result;r.readAsDataURL(f)};
+$("#musicFile").onchange=()=>{const f=$("#musicFile").files[0];if(!f)return;const r=new FileReader();r.onload=()=>audioData=r.result;r.readAsDataURL(f)};
+$("#musicType").onchange=()=>{$("#musicUrl").style.display=["youtube","spotify"].includes($("#musicType").value)?"block":"none";$("#musicFile").style.display=$("#musicType").value==="file"?"block":"none"};$("#musicType").dispatchEvent(new Event("change"));
+$("#preview").onclick=()=>alert("Seu cartão está pronto para ser exportado. A música começa quando o Renatinho clicar nele.");
+$("#factory").onsubmit=e=>{e.preventDefault();const type=$("#musicType").value;const c={version:"renatinho-card-v8",id:$("#name").value.trim().toLowerCase().replace(/[^a-z0-9]+/g,"-")+"-"+Date.now().toString(36).slice(-5),nome:$("#name").value.trim(),titulo:$("#title").value.trim()||"FELIZ ANIVERSÁRIO",icon:$("#icon").value.trim()||"✨",hint:"FRIEND CARD • CLASSIFIED",tipoDeAnimacao:$("#anim").value,mensagem:$("#message").value.trim(),fotos:photoData?[{data:photoData,nome:$("#photo").files[0]?.name||"foto"}]:[],musica:type==="file"?audioData:$("#musicUrl").value.trim(),musicaNome:type==="file"?$("#musicFile").files[0]?.name||"audio.mp3":type==="youtube"?"YouTube":type==="spotify"?"Spotify":"",cardConfig:{musica:{type,url:$("#musicUrl").value.trim(),autoPlay:true}},status:"pending-admin-approval",createdAt:new Date().toISOString()};const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(c,null,2)],{type:"application/json"}));a.download="cartao-"+c.id+".json";a.click();$("#status").textContent="★ CARTÃO EXPORTADO! MANDE O .JSON PARA A GIOVANA ★"};
+</script>
+<section class="factory-v10" id="factoryV10">
+  <div class="v10-panel">
+    <h3>★ CARD FACTORY — PERSONALIZE EVERYTHING ★</h3>
+    <div class="v10-row">
+      <div class="v10-field"><label>YOUR NAME</label><input id="v10Name" placeholder="Seu nome"></div>
+      <div class="v10-field"><label>CARD TITLE</label><input id="v10Title" placeholder="Uma memória..."></div>
+    </div>
+    <div class="v10-field"><label>MESSAGE</label><textarea id="v10Msg" rows="5" placeholder="Escreva sua mensagem para o Renatinho..."></textarea></div>
+    <div class="v10-field"><label>FONT</label>
+      <select id="v10Font">
+        <option value="Arial, sans-serif">Arial / Internet 2000</option>
+        <option value="Georgia, serif">Georgia / Carta clássica</option>
+        <option value="Trebuchet MS, sans-serif">Trebuchet / MSN</option>
+        <option value="Courier New, monospace">Courier / Terminal</option>
+        <option value="Comic Sans MS, cursive">Comic Sans / 2000 demais</option>
+        <option value="Impact, sans-serif">Impact / Banner</option>
+      </select>
+    </div>
+    <div class="v10-field"><label>CHOOSE YOUR THEME</label>
+      <div class="v10-themes">
+        <button class="v10-theme active" data-theme="y2k">💿 Y2K</button>
+        <button class="v10-theme" data-theme="fluminense">⚽ FLU</button>
+        <button class="v10-theme" data-theme="dino">🦖 DINO</button>
+        <button class="v10-theme" data-theme="pirate">☠️ PIRATE</button>
+        <button class="v10-theme" data-theme="music">🎧 MUSIC</button>
+        <button class="v10-theme" data-theme="books">📚 BOOKS</button>
+      </div>
+    </div>
+    <div class="v10-field"><label>EMOJIS — CLICK TO ADD</label>
+      <div class="v10-emojis">
+        <button class="v10-emoji">💚</button><button class="v10-emoji">❤️</button><button class="v10-emoji">⭐</button><button class="v10-emoji">✨</button>
+        <button class="v10-emoji">⚽</button><button class="v10-emoji">🦖</button><button class="v10-emoji">☠️</button><button class="v10-emoji">🏴‍☠️</button>
+        <button class="v10-emoji">🎸</button><button class="v10-emoji">🎧</button><button class="v10-emoji">📚</button><button class="v10-emoji">📖</button>
+        <button class="v10-emoji">🔥</button><button class="v10-emoji">💿</button><button class="v10-emoji">💻</button><button class="v10-emoji">🌈</button>
+      </div>
+    </div>
+    <div class="v10-field"><label>GIF URL (opcional)</label><input id="v10Gif" placeholder="https://.../seu-gif.gif"></div>
+    <div class="v10-field"><label>MUSIC URL / FILE NAME (opcional)</label><input id="v10Music" placeholder="YouTube, Spotify ou nome do arquivo"></div>
+    <button id="v11Surprise" type="button" style="width:100%;margin:10px 0;padding:12px;background:linear-gradient(#fff36b,#ff5b8d);border:6px outset #fff;box-shadow:5px 5px #111;font-weight:900;font-size:12px;cursor:pointer">✨ SURPRISE ME! — RANDOM Y2K MAGIC ✨</button>
+    <div class="v10-status" id="v10Status">LIVE PREVIEW ONLINE — altere qualquer campo e veja o cartão mudar.</div>
+  </div>
+  <div class="v10-preview-wrap">
+    <div class="v10-panel">
+      <h3>★ LIVE PREVIEW — YOUR CARD AS YOU MAKE IT ★</h3>
+      <div class="v10-preview" id="v10Preview">
+        <div class="scan"></div>
+        <div class="v10-card" id="v10Card">
+          <div class="v10-float v10-f1">✨</div><div class="v10-float v10-f2">💚</div><div class="v10-float v10-f3">⭐</div><div class="v10-float v10-f4">💿</div>
+          <div class="v10-hero" id="v10Hero">💚</div>
+          <h2 id="v10PreviewTitle">MY RENATINHO MEMORY</h2>
+          <div id="v10PreviewName" style="font-weight:bold">FROM: FRIEND</div>
+          <img id="v10PreviewGif" class="v10-gif" hidden alt="">
+          <p id="v10PreviewMsg">Comece a escrever e veja sua memória aparecer aqui em tempo real.</p>
+          <div id="v10PreviewEmojis" style="font-size:25px;min-height:36px">✨ 💚 ⭐</div>
+          <div style="margin-top:20px;font-size:9px">★ MADE WITH THE CARD FACTORY ★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(()=> {
+ const q=s=>document.querySelector(s), qa=s=>document.querySelectorAll(s);
+ const state={theme:"y2k",emojis:["✨","💚","⭐"]};
+ const themes={
+   y2k:{bg:"linear-gradient(135deg,#b8ffd0,#ef3340,#fff)",hero:"💿"},
+   fluminense:{bg:"linear-gradient(135deg,#006b3c,#fff,#c8102e)",hero:"⚽"},
+   dino:{bg:"linear-gradient(135deg,#9be564,#1b7f3a,#f4f1d7)",hero:"🦖"},
+   pirate:{bg:"linear-gradient(135deg,#111,#6e1525,#f0d46a)",hero:"☠️"},
+   music:{bg:"linear-gradient(135deg,#21103d,#ff2e83,#13d9ff)",hero:"🎧"},
+   books:{bg:"linear-gradient(135deg,#5b351f,#f1d7a5,#f7f0df)",hero:"📚"}
+ };
+ function render(){
+   const n=q("#v10Name")?.value||"FRIEND", t=q("#v10Title")?.value||"MY RENATINHO MEMORY", m=q("#v10Msg")?.value||"Comece a escrever e veja sua memória aparecer aqui em tempo real.";
+   const font=q("#v10Font")?.value||"Arial, sans-serif";
+   q("#v10PreviewName").textContent="FROM: "+n;
+   q("#v10PreviewTitle").textContent=t;
+   q("#v10PreviewMsg").textContent=m;
+   q("#v10PreviewEmojis").textContent=state.emojis.join(" ");
+   q("#v10Hero").textContent=themes[state.theme].hero;
+   q("#v10Preview").style.background=themes[state.theme].bg;
+   q("#v10Card").style.fontFamily=font;
+   const gif=q("#v10Gif")?.value.trim(), img=q("#v10PreviewGif");
+   if(gif){img.src=gif;img.hidden=false}else img.hidden=true;
+   q("#v10Status").textContent="LIVE PREVIEW ONLINE • "+state.theme.toUpperCase()+" THEME • "+state.emojis.length+" EMOJIS";
+ }
+ qa("#factoryV10 input,#factoryV10 textarea,#factoryV10 select").forEach(el=>el.addEventListener("input",render));
+ qa(".v10-theme").forEach(b=>b.addEventListener("click",()=>{qa(".v10-theme").forEach(x=>x.classList.remove("active"));b.classList.add("active");state.theme=b.dataset.theme;render()}));
+ qa(".v10-emoji").forEach(b=>b.addEventListener("click",()=>{state.emojis.push(b.textContent);if(state.emojis.length>12)state.emojis.shift();render()}));
+ render();
+})();
+</script>
+
+<script>
+(()=>{
+ const btn=document.getElementById("v11Surprise");
+ if(!btn)return;
+ const q=s=>document.querySelector(s);
+ const themes=[
+   {name:"y2k",bg:"linear-gradient(135deg,#b8ffd0,#ef3340,#fff)",emoji:["💿","✨","⭐","💚","💻"],title:["RENATINHO.EXE","OMG HAPPY BIRTHDAY","WELCOME TO THE INTERNET"]},
+   {name:"fluminense",bg:"linear-gradient(135deg,#006b3c,#fff,#c8102e)",emoji:["⚽","💚","❤️","🏆","⭐"],title:["TRICOLOR MEMORY","FLU MODE: ON","CAMPEÃO DA AMIZADE"]},
+   {name:"dino",bg:"linear-gradient(135deg,#9be564,#1b7f3a,#f4f1d7)",emoji:["🦖","🌴","🥚","⭐","🌿"],title:["JURASSIC BIRTHDAY","DINO MEMORY FILE","RAWRSOME DAY"]},
+   {name:"pirate",bg:"linear-gradient(135deg,#111,#6e1525,#f0d46a)",emoji:["☠️","🏴‍☠️","⚓","💰","🌊"],title:["GRAND LINE MEMORY","PIRATE MODE","WANTED: BIRTHDAY"]},
+   {name:"music",bg:"linear-gradient(135deg,#21103d,#ff2e83,#13d9ff)",emoji:["🎧","🎸","🎵","💿","✨"],title:["NOW PLAYING","BIRTHDAY MIX","TRACK 01: RENATINHO"]},
+   {name:"books",bg:"linear-gradient(135deg,#5b351f,#f1d7a5,#f7f0df)",emoji:["📚","📖","✒️","☕","⭐"],title:["CHAPTER: RENATINHO","A VERY GOOD STORY","THE NEXT CHAPTER"]},
+   {name:"love",bg:"linear-gradient(135deg,#ffb8c9,#fff,#b8ffd0)",emoji:["💚","❤️","💕","💖","✨"],title:["MADE WITH LOVE","A SPECIAL MEMORY","♥ FOR RENATINHO ♥"]}
+ ];
+ const fonts=["Arial, sans-serif","Georgia, serif","Trebuchet MS, sans-serif","Courier New, monospace","Comic Sans MS, cursive","Impact, sans-serif"];
+ const pick=a=>a[Math.floor(Math.random()*a.length)];
+ btn.addEventListener("click",()=>{
+   const t=pick(themes);
+   const font=pick(fonts);
+   const title=pick(t.title);
+   const name=q("#v10Name"), titleEl=q("#v10Title"), msg=q("#v10Msg"), fontEl=q("#v10Font");
+   if(name&&!name.value)name.value=["AMIGO","YOUR FRIEND","A FRIEND FROM THE INTERNET","SECRET FRIEND"][Math.floor(Math.random()*4)];
+   if(titleEl)titleEl.value=title;
+   if(msg&&!msg.value)msg.value=pick([
+     "Uma memória especial para você, Renatinho. Feliz aniversário! 💚",
+     "Que seu novo capítulo seja tão caótico e divertido quanto a internet dos anos 2000.",
+     "Esta mensagem foi enviada diretamente do futuro. Feliz aniversário!",
+     "Você desbloqueou uma memória secreta. Agora ela é sua para sempre. ♥"
+   ]);
+   if(fontEl)fontEl.value=font;
+   document.querySelectorAll(".v10-theme").forEach(x=>x.classList.toggle("active",x.dataset.theme===t.name));
+   const preview=document.querySelector("#v10Preview");
+   if(preview)preview.style.background=t.bg;
+   const emojiButtons=[...document.querySelectorAll(".v10-emoji")];
+   const wanted=t.emoji;
+   emojiButtons.forEach((b,i)=>b.style.transform=wanted.includes(b.textContent)?"scale(1.15)":"");
+   const status=q("#v10Status");
+   if(status)status.textContent="✨ SURPRISE GENERATED • "+t.name.toUpperCase()+" • "+font.split(",")[0]+" • "+wanted.join(" ");
+   btn.animate([{transform:"rotate(-2deg) scale(1)"},{transform:"rotate(2deg) scale(1.05)"},{transform:"rotate(0) scale(1)"}],{duration:450});
+   // Trigger the existing live preview listeners.
+   [name,titleEl,msg,fontEl].forEach(el=>el&&el.dispatchEvent(new Event("input",{bubbles:true})));
+ });
+})();
+</script>
+</body></html>
